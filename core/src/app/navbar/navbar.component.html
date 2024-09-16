@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+
+<div class="fixed flex justify-between  items-center bg-black w-full h-20 z-20">
+    <div class="text-slate-50 text-3xl ml-10">
+        logoHanif
+    </div>
+    <nav class="flex  justify-center space-x-10 text-slate-50 text-2xl">
+        <button class="hover:text-rose-400" (click)="goTonextsection('home')" >home</button>
+        <button class="" (click)="goTonextsection('about')">about</button>
+        <button (click)="goTonextsection('work')">work</button>
+        <button (click)="goTonextsection('contact')">contact</button>
+    </nav>
+
+    <!--Reseau section -->
+    <div class="flex space-x-4 text-slate-50 mr-10 ">
+        <button>L</button>
+        <button>g</button>
+        <button>t</button>
+    </div>
+</div>
