@@ -25,7 +25,7 @@ module.exports = {
           transform: 'rotateY(55deg)',
         },
         '.perspective-3d':{
-          'perspective': '1000px'
+          perspective: '1000px'
         }
       }
       addUtilities(newUtilities)
