@@ -15,6 +15,9 @@ module.exports = {
       },
       transformOrigin:{
         '3d': '50% 50%',
+      },
+      screens: {
+        'msc': {'max':'600px'}
       }
     },
   },
