@@ -5,14 +5,17 @@
 
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppin';
     src: url('./assets/font/Poppins-Medium.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/font/Poppins-ExtraBold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
 
-@layer base {
-    body {
-      @apply font-sans;  /* Applique la police globalement */
-    }
-  }
+
+
