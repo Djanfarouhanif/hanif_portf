@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Poppins' , 'sans-serif'],
+      },
       width:{
         "screen":"600px",
         "projet": "700px",
