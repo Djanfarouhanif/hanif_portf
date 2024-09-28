@@ -17,7 +17,8 @@ module.exports = {
         '3d': '50% 50%',
       },
       screens: {
-        'msc': {'max':'600px'}
+        'msc': {'max':'600px'},
+        'contact': {'max': '800px'}
       }
     },
   },
