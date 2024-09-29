@@ -3,11 +3,22 @@
     <div class="text-slate-50 text-3xl ml-10 msc:text-sm msc:ml-4  h-18 ">
         <img class="w-28" src="../../assets/logo/black white Thunder logo.png" alt="">
     </div>
-    <nav class="flex  justify-center space-x-10 text-slate-50 contact:hidden text-2xl msc:text-sm  msc:space-x-2">
-        <button class="hover:text-[#848282b7] transition-all " (click)="goTonextsection('home')">home</button>
-        <button class="hover:text-[#848282b7] transition-all" (click)="goTonextsection('about')">about</button>
-        <button class="hover:text-[#848282b7] transition-all" (click)="goTonextsection('work')">work</button>
-        <button class="hover:text-[#848282b7] transition-all " (click)="goTonextsection('contact')">contact</button>
+
+    <button (click)="toggleMenu()"  class=" hidden  contact:flex z-20">
+        <ng-container *ngIf="isMenuOpen; else menuIcon" class="transition-all">
+            <!-- Icon Pour clse -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="white" d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6l-5.6 5.6Z"/></svg>
+        </ng-container>
+        <ng-template #menuIcon class="transition-all">
+                <!-- Icon pour Menu -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="white" d="M4 17.27v-1h16v1H4Zm0-4.77v-1h16v1H4Zm0-4.77v-1h16v1H4Z"/></svg>
+        </ng-template>
+    </button>
+    <nav class="flex  justify-center space-x-10 contact:space-x-0 contact:bg-black contact:opacity-[0.5] contact:w-full  text-slate-50 contact:absolute contact:flex-col contact:top-0 contact:h-screen text-2xl  contact:space-y-4">
+        <button class="hover:text-[#848282b7] transition-all contact:text-slate-5" (click)="goTonextsection('home')">home</button>
+        <button class="hover:text-[#848282b7] transition-all contact:text-slate-5" (click)="goTonextsection('about')">about</button>
+        <button class="hover:text-[#848282b7] transition-all contact:text-slate-5" (click)="goTonextsection('work')">work</button>
+        <button class="hover:text-[#848282b7] transition-all contact:text-slate-5" (click)="goTonextsection('contact')">contact</button>
     </nav>
 
     <!--Reseau section -->
@@ -17,5 +28,5 @@
         <button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"><path fill="white" d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg></button>
     </div>
 </div>
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="white" d="M4 17.27v-1h16v1H4Zm0-4.77v-1h16v1H4Zm0-4.77v-1h16v1H4Z"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="white" d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6l-5.6 5.6Z"/></svg>
+
+<!--  -->
