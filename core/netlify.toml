@@ -1,11 +1,11 @@
 [build]
-  command = "npm run build"
+   command = "ng build --prod"
   publish = "dist/core/browser"
 
 
 [context.production.environment]
   NODE_VERSION = "16.13.0"
-  
+
 [[redirects]]
 from = "/*"
 to = "/index.html"
