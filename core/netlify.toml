@@ -2,7 +2,7 @@
 [build]
   base = "core"
   command = "npm run build"
-  publish = "dist/core/browser"
+  publish = "core/dist"
 
 [build.environment]
   NODE_VERSION = "18.13.0"
