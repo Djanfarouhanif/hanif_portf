@@ -1,12 +1,13 @@
+
 [build]
   base = "core"
   command = "npm run build"
   publish = "dist/core/browser"
 
-[context.production.environment]
-  NODE_VERSION = "16.13.0"
+[build.environment]
+  NODE_VERSION = "18.13.0"
 
-
+ 
 [[redirects]]
 from = "/*"
 to = "/index.html"
