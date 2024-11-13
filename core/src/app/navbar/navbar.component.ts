@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { FoncService } from '../fonc.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +13,17 @@ import { CommonModule } from '@angular/common';
 export class NavbarComponent {
 
   isMenuOpen = false;
-    constructor(private viewportscroller: ViewportScroller){}
+    constructor(private viewportscroller: ViewportScroller, private fonc:FoncService){}
 
 
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
     }
-    goTonextsection(sectionId: string){
-      this.viewportscroller.scrollToAnchor(sectionId)
-    }
+
+    
+    // changer de section en fonction du nom 
+     goTonextsection(sectionId: string){
+      //  this.viewportscroller.scrollToAnchor(sectionId)
+      this.fonc.goTonextSection(sectionId)
+     }
 }
