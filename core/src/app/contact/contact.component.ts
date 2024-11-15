@@ -1,36 +1,43 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClientModule ,HttpClient } from '@angular/common/http';
+import { CommonModule}  from '@angular/common';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule, CommonModule ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   
 })
 export class ContactComponent {
 
-  myForm!: FormGroup 
+  userName = '';
+  startTime = '';
+  endTime = '';
+  meetingLink = '';
 
-  constructor( private fb:FormBuilder, private http:HttpClient){
+  constructor(private apiservice:ApiService){}
 
-    this.myForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      subject: ['', Validators.required],
-      message:  ['', Validators.required]
-    });
+  bookMeeting(){
+    const data = {
+      user_name:  this.userName,
+      start_time: this.startTime,
+      end_time: this.endTime
+    };
 
-  }
-
-  onSubmit(){
-    const formData = this.myForm.value;
-
-    this.http.post('http://localhost:8000/api/send-message', formData).subscribe(response =>{
-      console.log("Form send to backend", response);
-    });
-  }
+    // appelle de la fonction pour envoyer les information backend
+    this.apiservice.bookMeeting(data).subscribe(
+      (response) => {
+        this.meetingLink = response.link;
+        alert('Réservation réussie ! Lien Google Meet :' + this.meetingLink)
+      }
+    )
+  };
 
 }
+
+
+
