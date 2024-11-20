@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClientModule ,HttpClient } from '@angular/common/http';
+import { HttpClientModule  } from '@angular/common/http';
 import { CommonModule}  from '@angular/common';
 import { ApiService } from '../api.service';
+import { provideHttpClient, withFetch} from '@angular/common/http'
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, CommonModule ],
+  imports: [ReactiveFormsModule, HttpClientModule ,CommonModule ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
+  providers: [ApiService]
+        
   
 })
 export class ContactComponent {
@@ -28,13 +31,13 @@ export class ContactComponent {
       end_time: this.endTime
     };
 
-    // appelle de la fonction pour envoyer les information backend
-    this.apiservice.bookMeeting(data).subscribe(
-      (response) => {
-        this.meetingLink = response.link;
-        alert('Réservation réussie ! Lien Google Meet :' + this.meetingLink)
-      }
-    )
+    //  appelle de la fonction pour envoyer les information backend
+      this.apiservice.bookMeeting(data).subscribe(
+        (response) => {
+          this.meetingLink = response.link;
+          alert('Réservation réussie ! Lien Google Meet :' + this.meetingLink)
+        }
+      )
   };
 
 }
