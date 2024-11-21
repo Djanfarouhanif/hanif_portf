@@ -12,8 +12,7 @@ import { provideHttpClient, withFetch} from '@angular/common/http'
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   providers: [ApiService]
-        
-  
+         
 })
 export class ContactComponent {
 
