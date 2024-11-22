@@ -1,0 +1,22 @@
+.scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+display: none;
+}
+
+/* crée une animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%)
+    }
+    100%{
+        transform: translateX(-100%)
+    }
+}
+
+.animate-marquee {
+    animation: marquee 10s linear infinite
+}
