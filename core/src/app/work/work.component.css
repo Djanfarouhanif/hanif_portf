@@ -16,7 +16,8 @@ display: none;
         transform: translateX(-100%)
     }
 }
-
+ 
 .animate-marquee {
     animation: marquee 10s linear infinite
 }
+
