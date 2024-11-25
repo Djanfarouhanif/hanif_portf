@@ -22,6 +22,12 @@ module.exports = {
       screens: {
         'msc': {'max':'600px'},
         'contact': {'max': '800px'}
+      },
+      keyframes: {
+        wiggle : {
+          '0%': {tranform : 'translateX(100%)'},
+          '100%': { tranform: 'translateX(-100%)'}
+        }
       }
     },
   },
