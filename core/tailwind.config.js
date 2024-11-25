@@ -24,7 +24,7 @@ module.exports = {
         'contact': {'max': '800px'}
       },
       animation : {
-        wiggle: 'wiggle 1s ease-in-out infinite'
+        wiggle: 'wiggle 20s ease-in-out infinite'
       },
       keyframes: {
         wiggle : {
