@@ -24,12 +24,13 @@ module.exports = {
         'contact': {'max': '800px'}
       },
       animation : {
-        wiggle: 'wiggle 20s ease-in-out infinite'
+        wiggle: 'wiggle 10s ease-in-out infinite'
       },
       keyframes: {
         wiggle : {
-          '0%': {transform : 'translateX(100%)'},
-          '100%': { transform: 'translateX(-100%)'}
+          '0%': {transform : 'translateX(0%)'},
+          '100%': { transform: 'translateX(-100%)'},
+          // '100%': {transform: 'translateX(0%)'}
         }
       }
     },
