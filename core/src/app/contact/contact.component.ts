@@ -24,11 +24,13 @@ export class ContactComponent {
   constructor(private apiservice:ApiService){}
 
   bookMeeting(){
+    alert('ha')
     const data = {
       user_name:  this.userName,
       start_time: this.startTime,
       end_time: this.endTime
     };
+    console.log(data)
 
     //  appelle de la fonction pour envoyer les information backend
       this.apiservice.bookMeeting(data).subscribe(
