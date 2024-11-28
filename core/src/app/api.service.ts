@@ -6,8 +6,8 @@ import { Inject } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-   private apiUrl = 'https://portbackend-production.up.railway.app'; // L'api du backend 
-  // private apiUrl = 'http://127.0.0.1:8000'
+  //  private apiUrl = 'https://portbackend-production.up.railway.app'; // L'api du backend 
+  private apiUrl = 'http://127.0.0.1:8000'
   http = inject(HttpClient)
 
   bookMeeting(data:any): Observable<any> {

@@ -91,12 +91,19 @@ export class ContactComponent {
   goToHome(): void{
 
     this.meetingLink = '' // Retiriger ver l'accuille
-    this.name = "";
-    this.email = "";
-    this.startTime = '';
-    this.endTime = '';
+    // Pour reintialiser le formulaire
+    this.form.reset({
+      user_name: '',
+      email : '',
+      start_time: '',
+      end_time: ''
+
+    });
     
   };
+
+
+
 
 }
 
