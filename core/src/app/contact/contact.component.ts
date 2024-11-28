@@ -24,7 +24,7 @@ export class ContactComponent {
       const text = element.textContent || '';
       navigator.clipboard.writeText(text).then(() =>{
           this.isCopied = true; // change l'icône 
-          setTimeout(()=> this.isCopied = false, 200)
+          setTimeout(()=> this.isCopied = false, 2000)
       }).catch(err =>{
         console.error('Echec de la copie: ', err)
       })

@@ -56,13 +56,17 @@
     <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline">{{meetingLink}}</a></p>
 </div> -->
 
-<div  class="mt-6 text-center msc:w-[300px] min-h-screen  bg-white/30 fixed top-0 left-0 w-full  z-50">
-    <i [class]="isCopied ? 'fa fa-check': 'fa fa-copy' " class="cursor-pointer" (click)="copyText(textToCopy)" title="copier">
-        
-    </i>
-    <div class="p-2 flex justify-center items-center min-h-screen">
-        <div class="w-[400px] bg-slate-200 h-[200px] p-10 rounded-xl">
-            <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline" #textToCopy>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, minus?</a></p>
+<div *ngIf="meetingLink" class="mt-6 text-center msc:w-[300px] min-h-screen   fixed top-0 left-0 w-full  z-50">
+  
+    <div class="relative p-2 flex justify-center items-center min-h-screen">
+       
+        <div class="w-[400px] bg-slate-200 h-[200px] p-10 rounded-xl relative">
+            
+            <!-- Code pour copier le text dans le balise a -->
+            <i [class]="isCopied ? 'fa fa-check': 'fa fa-copy' " class="cursor-pointer absolute top-4 right-2 w-8 " (click)="copyText(textToCopy)" title="copier">
+                
+            </i>
+            <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline p-2 pl-0" #textToCopy >{{meetingLink}}</a></p>
         </div>
         
     </div>
