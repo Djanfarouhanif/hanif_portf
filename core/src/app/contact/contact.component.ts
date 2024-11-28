@@ -6,10 +6,12 @@ import { ApiService } from '../api.service';
 import { Data } from '../data';
 import { Router } from '@angular/router';
 import { Inject } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule ,CommonModule ],
+  imports: [ReactiveFormsModule, HttpClientModule ,CommonModule, FormsModule ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   providers: [ApiService]
@@ -19,6 +21,10 @@ export class ContactComponent {
     form: FormGroup
     meetingLink = ''
     isCopied = false; // Etat de l'icone
+    name:string = "";
+    email:string = "";
+    startTime:string = '';
+    endTime:string = "";
 
     //Copy le text 
     copyText(element:HTMLElement): void {
@@ -37,6 +43,7 @@ export class ContactComponent {
   constructor(private apiservice:ApiService, private fb:FormBuilder, private router:Router ){
     this.form = this.fb.group({
       name: ['',[Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
       startTime: ['', [Validators.required]],
       endTime: ['', [Validators.required]],
     })
@@ -48,6 +55,7 @@ export class ContactComponent {
     const data:Data = {
 
        user_name:  this.form.get('name')?.value,
+       email: this.form.get('email')?.value,
        start_time: this.form.get('startTime')?.value,
        end_time: this.form.get('endTime')?.value
 
@@ -74,24 +82,21 @@ export class ContactComponent {
           alert('Erreur inconnue');
         }
         console.error('Erreur détèctée', err)
-
-       }
-       }
-       
-       )
+      }});
    } else{
     console.log('error');
-   }
-   
-   
-  };
+   }};
 
   // Fonction pour naviger a home 
   goToHome(): void{
 
     this.meetingLink = '' // Retiriger ver l'accuille
+    this.name = "";
+    this.email = "";
+    this.startTime = '';
+    this.endTime = '';
     
-  }
+  };
 
 }
 
