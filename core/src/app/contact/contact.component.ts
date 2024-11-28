@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClientModule  } from '@angular/common/http';
 import { CommonModule}  from '@angular/common';
 import { ApiService } from '../api.service';
-import { provideHttpClient, withFetch} from '@angular/common/http'
 import { Data } from '../data';
+import { Router } from '@angular/router';
+import { Inject } from '@angular/core';
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -28,10 +29,12 @@ export class ContactComponent {
       }).catch(err =>{
         console.error('Echec de la copie: ', err)
       })
-    }
+    };
+
+// creation de l'injectable pour router
 
 
-  constructor(private apiservice:ApiService, private fb:FormBuilder){
+  constructor(private apiservice:ApiService, private fb:FormBuilder, private router:Router ){
     this.form = this.fb.group({
       name: ['',[Validators.required, Validators.minLength(3)]],
       startTime: ['', [Validators.required]],
@@ -82,6 +85,13 @@ export class ContactComponent {
    
    
   };
+
+  // Fonction pour naviger a home 
+  goToHome(): void{
+
+    this.meetingLink = '' // Retiriger ver l'accuille
+    
+  }
 
 }
 

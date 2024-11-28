@@ -19,9 +19,10 @@
     <div class="flex mt-3 items-center"><span class="mr-4"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16"><path fill="white" fill-rule="evenodd" d="M14.95 3.684L8.637 8.912a1 1 0 0 1-1.276 0l-6.31-5.228A.999.999 0 0 0 1 4v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a.999.999 0 0 0-.05-.316M2 2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m-.21 1l5.576 4.603a1 1 0 0 0 1.27.003L14.268 3z"/></svg></span>hanifdjanfarou8gmail.com</div>
 </div>
 
-<div class="text-slate-50 text-xl msc:text-sm mt-10 p-2 border rounded-2xl  cursor-pointer w-[700px] contact:w-full ">
-    <p>Prendre rendevous</p>
+<div class="text-slate-50 text-xl msc:text-sm mt-10 p-2 border rounded-2xl bg-gradient-to-r from-blue-950 to-slate-700 cursor-pointer w-[700px] contact:w-full">
+    <div class="flex mt-3 items-center"><span class="mr-4">Cal</span>Prendre rendevous </div>
 </div>
+
 <div >
     <h2>Résever un créneau</h2>
     <form [formGroup]="form" (ngSubmit)="bookMeeting()" class="max-w-xl mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-lg"> 
@@ -61,7 +62,7 @@
     <div class="relative p-2 flex justify-center items-center min-h-screen">
        
         <div class="w-[400px] bg-slate-200 h-[200px] p-10 rounded-xl relative">
-            
+            <i class="fa fa-times absolute cursor-pointer top-4 left-2" (click)="goToHome()"></i>
             <!-- Code pour copier le text dans le balise a -->
             <i [class]="isCopied ? 'fa fa-check': 'fa fa-copy' " class="cursor-pointer absolute top-4 right-2 w-8 " (click)="copyText(textToCopy)" title="copier">
                 
