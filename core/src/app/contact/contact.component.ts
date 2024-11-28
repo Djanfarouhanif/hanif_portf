@@ -17,7 +17,18 @@ import { Data } from '../data';
 export class ContactComponent {
     form: FormGroup
     meetingLink = ''
-    
+    isCopied = false; // Etat de l'icone
+
+    //Copy le text 
+    copyText(element:HTMLElement): void {
+      const text = element.textContent || '';
+      navigator.clipboard.writeText(text).then(() =>{
+          this.isCopied = true; // change l'icône 
+          setTimeout(()=> this.isCopied = false, 200)
+      }).catch(err =>{
+        console.error('Echec de la copie: ', err)
+      })
+    }
 
 
   constructor(private apiservice:ApiService, private fb:FormBuilder){

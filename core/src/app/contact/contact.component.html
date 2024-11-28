@@ -49,8 +49,22 @@
 
             <button type="submit" [disabled]="form.invalid" class="w-full py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Réserver</button>
 
-            <div *ngIf="meetingLink" class="mt-6 text-center">
-                <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline">{{meetingLink}}</a></p>
-            </div>
     </form>
+</div>
+
+<!-- <div *ngIf="meetingLink" class="mt-6 text-center fixed w-{300px} h-{200px} bg-white">
+    <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline">{{meetingLink}}</a></p>
+</div> -->
+
+<div  class="mt-6 text-center msc:w-[300px] min-h-screen  bg-white/30 fixed top-0 left-0 w-full  z-50">
+    <i [class]="isCopied ? 'fa fa-check': 'fa fa-copy' " class="cursor-pointer" (click)="copyText(textToCopy)" title="copier">
+        
+    </i>
+    <div class="p-2 flex justify-center items-center min-h-screen">
+        <div class="w-[400px] bg-slate-200 h-[200px] p-10 rounded-xl">
+            <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline" #textToCopy>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, minus?</a></p>
+        </div>
+        
+    </div>
+   
 </div>
