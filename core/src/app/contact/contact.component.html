@@ -29,7 +29,7 @@
     <form [formGroup]="form" (ngSubmit)="bookMeeting()" class="max-w-xl mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-lg"> 
         <div class="mb-6">
             <label for="" class="block text-lg font-medium text-gray-700 mb-2">Nom :</label>
-            <input formControlName="name" [(ngModel)]="name"
+            <input formControlName="name" 
             class="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-700 focus:border-blue-500">
             <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="text-red-500">le nom dois depasser 3  caractère</div>
 
@@ -37,7 +37,7 @@
 
         <div>
             <label for="email" class="block text-lg font-medium text-gray-700 foucus:border-blue-500">Email: </label>
-            <input formControlName="email" [(ngModel)]="email"
+            <input formControlName="email" 
             class="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-700 focus:border-blue-500"
             >
             <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="text-red-500">
@@ -47,14 +47,14 @@
             
         <div class="mb-6">
             <label for="" class="block text-lg font-medium text-gray-700 mb-2">Heure de début :</label>
-            <input type="datetime-local" formControlName="startTime" [(ngModel)]="startTime"
+            <input type="datetime-local" formControlName="startTime" 
             class=" w-full px-4 border border-gray-300 rounded-md text-gray-700 focus:ring-blue-500 focus:border-blue-500">
             <div *ngIf="form.get('startTime')?.touched && form.get('startTime')?.invalid" class="text-red-500"> * Obligatoire</div>
         </div>
            
         <div class="mb-6">
             <label class="block text-lg font-medium text-gray-700 mb-2"> Heure de fin :</label>
-            <input type="datetime-local" formControlName="endTime" [(ngModel)]="endTime" class="w-full border border-gray-300 rounded-sm text-gray-700 focus:ring-blue-500 focus:blue-500"> 
+            <input type="datetime-local" formControlName="endTime" class="w-full border border-gray-300 rounded-sm text-gray-700 focus:ring-blue-500 focus:blue-500"> 
             <div *ngIf="form.get('endTime')?.touched && form.get('endTime')?.invalid" class="text-red-500">* Obligatoire</div>
         </div>
             

@@ -21,10 +21,7 @@ export class ContactComponent {
     form: FormGroup
     meetingLink = ''
     isCopied = false; // Etat de l'icone
-    name:string = "";
-    email:string = "";
-    startTime:string = '';
-    endTime:string = "";
+  
 
     //Copy le text 
     copyText(element:HTMLElement): void {
