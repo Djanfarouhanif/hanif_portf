@@ -23,7 +23,7 @@
     <div class="flex mt-3 items-center"><span class="mr-4"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="white" d="M208 34h-26V24a6 6 0 0 0-12 0v10H86V24a6 6 0 0 0-12 0v10H48a14 14 0 0 0-14 14v160a14 14 0 0 0 14 14h160a14 14 0 0 0 14-14V48a14 14 0 0 0-14-14M48 46h26v10a6 6 0 0 0 12 0V46h84v10a6 6 0 0 0 12 0V46h26a2 2 0 0 1 2 2v34H46V48a2 2 0 0 1 2-2m160 164H48a2 2 0 0 1-2-2V94h164v114a2 2 0 0 1-2 2m-70-78a10 10 0 1 1-10-10a10 10 0 0 1 10 10m44 0a10 10 0 1 1-10-10a10 10 0 0 1 10 10m-88 40a10 10 0 1 1-10-10a10 10 0 0 1 10 10m44 0a10 10 0 1 1-10-10a10 10 0 0 1 10 10m44 0a10 10 0 1 1-10-10a10 10 0 0 1 10 10"/></svg></span>Prendre rendevous </div>
 </div>
 
-<div >
+<div class="mb-8">
 
     <h2>Résever un créneau</h2>
     <form [formGroup]="form" (ngSubmit)="bookMeeting()" class="max-w-xl mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-lg"> 
@@ -60,7 +60,11 @@
             
 
             <button type="submit" [disabled]="form.invalid" class="w-full py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Réserver</button>
+            <div *ngIf="load" class=" w-full flex justify-center p-2">
 
+                <div  class="w-14 h-14 animate-spin  border  border-l-0 border-black rounded-full " ></div>
+            </div>
+        
     </form>
 </div>
 
@@ -72,12 +76,10 @@
   
     <div class="relative p-2 flex justify-center items-center min-h-screen">
        
-        <div class="w-[400px] bg-slate-200 h-[200px] p-10 rounded-xl relative">
+        <div class="w-[400px] bg-slate-200 h-[200px] p-10 rounded-xl relative msc:translate-x-8 ">
             <i class="fa fa-times absolute cursor-pointer top-4 left-2" (click)="goToHome()"></i>
             <!-- Code pour copier le text dans le balise a -->
-            <i [class]="isCopied ? 'fa fa-check': 'fa fa-copy' " class="cursor-pointer absolute top-4 right-2 w-8 " (click)="copyText(textToCopy)" title="copier">
-                
-            </i>
+            <i [class]="isCopied ? 'fa fa-check': 'fa fa-copy' " class="cursor-pointer absolute top-4 right-2 w-8 " (click)="copyText(textToCopy)" title="copier"></i>
             <p class="text-gray-700 text-left">Lien Google Meet: <a [href]="meetingLink" target="_blank" class="block text-blue-600 hover:underline p-2 pl-0 break-words" #textToCopy >{{meetingLink}}</a></p>
         </div>
         
