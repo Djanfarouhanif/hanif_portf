@@ -81,7 +81,7 @@ export class ContactComponent {
         this.load = false;
 
         if(err.status=== 400){
-          alert("Données invalide, veuillez vérifier vos information")
+          // alert("Données invalide, veuillez vérifier vos information")
         } else if (err.status === 500){
          this.error = !this.error
         } else {
@@ -92,7 +92,7 @@ export class ContactComponent {
 
       }});
    } else{
-    console.log('error');
+    
    }};
 
   // Fonction pour naviger a home 
