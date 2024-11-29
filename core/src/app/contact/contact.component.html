@@ -60,6 +60,10 @@
             
 
             <button type="submit" [disabled]="form.invalid" class="w-full py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Réserver</button>
+
+            <div *ngIf="error">
+                <p class="text-red-500 pt-4">Verifier bien les data envoyer</p>
+            </div>
             <div *ngIf="load" class=" w-full flex justify-center p-2">
 
                 <div  class="w-14 h-14 animate-spin  border  border-l-0 border-black rounded-full " ></div>

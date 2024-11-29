@@ -22,6 +22,7 @@ export class ContactComponent {
     meetingLink = ''
     isCopied = false; // Etat de l'icone
     load = false; // Etat de load pour ne pas s'afficher
+    error = false;
   
 
     //Copy le text 
@@ -49,7 +50,7 @@ export class ContactComponent {
 
   bookMeeting(){
     
-    
+    this.error = false;
 
    if(this.form.valid){
     this.load = !this.load;
@@ -71,18 +72,18 @@ export class ContactComponent {
     //  appelle de la fonction pour envoyer les information backend
        this.apiservice.bookMeeting(data).subscribe({
         next:  response => {
-          
+          this.load = false;
           this.meetingLink = response.link;
-           alert('Réservation réussie ! Lien Google Meet :' + this.meetingLink)
+           
        },
        error: err => {
         // etat de load
-        setTimeout(()=> this.load = false, 2000)
+        this.load = false;
 
         if(err.status=== 400){
           alert("Données invalide, veuillez vérifier vos information")
         } else if (err.status === 500){
-          alert('Problème interne du serveur , réessayer plus tard.')
+         this.error = !this.error
         } else {
         
           
