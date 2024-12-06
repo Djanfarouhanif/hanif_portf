@@ -12,6 +12,7 @@ export class HomeComponent {
   constructor(private func:FoncService){}
 
   goTonextSection(sectionId:string){
+    
     this.func.goTonextSection(sectionId)
   }
 }
