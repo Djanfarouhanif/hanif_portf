@@ -5,17 +5,17 @@
 
 
 @font-face {
-    font-family: 'Poppin';
-    src: url('./assets/font/Poppins-Medium.otf') format('opentype');
+    font-family: 'Poppins';
+    src: url('./assets/font/Poppins-Bold.otf') format('opentype');
     font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('./assets/font/Poppins-Bold.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
+    font-style:normal;
 }
 
+@font-face {
+  font-family: 'simple';
+  src: url('./assets/font/Roboto-Light.ttf') format('opentype');
+  font-weight: 400;;
+  font-style: normal;
+}
 
 
