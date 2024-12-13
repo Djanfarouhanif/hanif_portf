@@ -1,25 +1,74 @@
 <!-- Container -->
-<div>
+<div class="flex justify-center p-20 msc:p-10   w-full">
 
-  <!-- Presentation  -->
-  <div>
+  <div class="flex w-[60%]   msc:w-[80%] flex-col">
+       <!-- Presentation  -->
+  <div class="flex w-full justify-between msc:flex-col-reverse">
     <!-- Presentation -->
-     <div> 
-      <h1>Djanfarou Hanif </h1>
-      <p>Developeur fullstack Python | django |  JavaScripts |angular</p>
+     <div class=""> 
+      <h1 class="text-3xl msc:text-xl">Djanfarou Hanif </h1>
+      <p class="mt-4 msc:text-sm">Developeur fullstack </p>
+      <p class="msc:text-sm">Python | django |  JavaScripts |angular</p>
 
      </div>
     <!-- Profile -->
-     <div class="w-[300px] h-[300px] rounded-full"> 
-      <img src="../assets/image/portfolio_image.jpg" alt="">
+     <div class="w-[100px] h-[100px] msc:w-[70px] msc:h-[70px] msc:mb-4 rounded-full "> 
+      <img class="rounded-full"  src="../assets/image/portfolio_image.jpg" alt="">
      </div>
   </div>
 
   <!-- A propos -->
-  <div></div>
-  <!-- Mes projet -->
-  <div></div>
-  <!-- Contact -->
-  <div></div>
+  <div class="">
+    <h1> À propos</h1>
 
+    <p class="mt-4 msc:text-sm">Lorem Lorem ipsum dolor sit amet. ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, adipisci.</p>
+    <p class="mt-4 msc:text-sm">Lorem Lorem ipsum dolor sit amet. ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, adipisci.</p>
+    <p class="mt-4 msc:text-sm">Lorem Lorem ipsum dolor sit amet. ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, adipisci.</p>
+    <p class="mt-4 msc:text-sm">Lorem Lorem ipsum dolor sit amet. ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, adipisci.</p>
+  </div>
+  <!-- Mes projet -->
+  <div class="mt-[50px]">
+    <!-- title -->
+     <div class="text-center">
+      <p>Mes Projets</p>
+      <h1 class="text-xl">Découvrez mes projets</h1>
+     </div>
+     <!-- Projet  -->
+     <div class="grid  grid-cols-2 gap-4 contact:flex contact:flex-wrap ">
+        <div class="">
+          <img class="w-full h-[200px]" src="../assets/image/portfolio.png" alt="">
+          <div class="p-4">
+            <h1>Downyout</h1>
+            <p class="mt-2 msc:text-sm">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <!-- Button pour vitier le site -->
+            <button  class="mt-4 bg-black p-2 rounded-2xl"><a class=" text-white" href="#" >site</a></button>
+         </div>
+        </div>
+
+        <div class="">
+          <img class="w-full h-[200px]" src="../assets/image/portfolio.png" alt="">
+          <!-- text desciption -->
+           <div class="p-4">
+              <h1>Downyout</h1>
+              <p class="mt-2 msc:text-sm">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+              <!-- Button pour visité le site -->
+              <button  class="mt-4 bg-black p-2 rounded-2xl"><a class=" text-white" href="#" >site</a></button>
+           </div>
+        </div>
+
+     </div>
+
+  </div>
+  <!-- Contact -->
+  <div>
+    <!-- Title contact -->
+     <div class="text-center">
+          <p>Contact</p>
+          <h1>Entrez en contact </h1>
+          <p msc:text-sm>Envoyez-moi simplement <span class="text-blue-400">un message par mail</span> et je répondrai rapidement.</p>
+     </div>
+  </div>
+  </div>
+ 
+<div class="fixed w-[300px] h-[20px] bg-black bottom-4 rounded-xl"></div>
 </div>

@@ -21,7 +21,7 @@ module.exports = {
       },
       screens: {
         'msc': {'max':'600px'},
-        'contact': {'max': '800px'}
+        'contact': {'max': '900px'}
       },
       animation : {
         wiggle: 'wiggle 10s ease-in-out infinite'
