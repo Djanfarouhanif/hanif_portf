@@ -14,6 +14,7 @@ module.exports = {
       },
       boxShadow: {
         custom: "-2px 2px 2px rgba(0,0,0,0.9), 2px -2px 5px rgba(0,0,0,0.9)",
+        shad: "0px 0px 5px inset"
       },
       transformOrigin: {
         "3d": "50% 50%",

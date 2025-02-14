@@ -1,3 +1,4 @@
+/* animation scroll */
 .scroll_a {
     animation: allSc linear;
     animation-timeline: view();
@@ -15,6 +16,7 @@
     }
 }
 
+/* animation welcome */
 .scroll_b {
     animation: wel linear .7s;
     
@@ -23,15 +25,23 @@
 @keyframes wel {
     0% {
         filter: blur(10px);
-        transform: scale(.4);
+        opacity: 0;
        
     }
     50% {
         filter: blur(5);
+        opacity: 0.5;
     }
     to {
         filter: blur(0);
-        transform: scale(1);
+        opacity: 1;
         
     }
+}
+
+/* Background carre */
+
+.carre {
+    background-image: repeating-linear-gradient(90deg, #0000000e 1px, transparent 2px, transparent 40px), repeating-linear-gradient(#00000028 1px , transparent 2px, transparent 40px);
+    background-size: 40px 40px;
 }
